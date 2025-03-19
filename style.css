@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f5f5f5;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+
+.container {
+    max-width: 700px;
+    width: 100%;
+}
+
+.hero {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.quote-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 4px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+}
+
+#quote {
+    font-size: 24px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-weight: 300;
+    color: #333;
+}
+
+#author {
+    text-align: right;
+    font-size: 16px;
+    color: #777;
+    font-style: italic;
+}
+#tags {
+    text-align: left;
+    font-size: 16px;
+    color: #777;
+    font-style: italic;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.generate {
+    padding: 12px 20px;
+    background-color: white;
+    color: #333;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+#generate-button {
+    background-color: #333;
+    color: white;
+    border: 1px solid #333;
+}
+
+.generate:hover {
+    background-color: #f8f8f8;
+}
+
+#generate-button:hover {
+    background-color: #444;
+}
+
+@media (max-width: 600px) {
+    .buttons {
+        flex-direction: column;
+    }
+    
+    .generate {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .quote-container {
+        padding: 25px;
+    }
+    
+    #quote {
+        font-size: 20px;
+    }
+}
