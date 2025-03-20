@@ -15,29 +15,78 @@ body {
     padding: 20px;
 }
 
-
 .container {
     max-width: 700px;
     width: 100%;
 }
 
 .hero {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 20px;
-    font-weight: 300;
-    letter-spacing: 1px;
     text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333333;
 }
 
 .quote-container {
-    background-color: white;
     padding: 40px;
     border-radius: 4px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
     margin-bottom: 20px;
+     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
 }
 
+/* Dark overlay for better text contrast */
+.quote-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+/* IMPORTANT: More specific selectors to override the later rules */
+.quote-container #quote {
+    position: relative;
+    z-index: 2;
+    color: #ffffff !important; /* Using !important to ensure this takes precedence */
+    font-size: 24px;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.quote-container #tags {
+    position: relative;
+    z-index: 2;
+    color: #9c00e4 !important;
+    font-size: 16px;
+    font-style: italic;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.quote-container #author {
+    position: relative;
+    z-index: 2;
+    color: #f0f0f0 !important;
+    font-size: 18px;
+    font-weight: normal;
+    text-align: right;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    font-style: italic;
+}
+
+/* These general styles are being overridden for elements inside .quote-container */
 #quote {
     font-size: 24px;
     line-height: 1.6;
@@ -52,6 +101,7 @@ body {
     color: #777;
     font-style: italic;
 }
+
 #tags {
     text-align: left;
     font-size: 16px;
@@ -104,7 +154,7 @@ body {
         padding: 25px;
     }
     
-    #quote {
+    .quote-container #quote {
         font-size: 20px;
     }
 }
